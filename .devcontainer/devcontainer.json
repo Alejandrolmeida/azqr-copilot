@@ -17,7 +17,7 @@
 		"ghcr.io/rchaganti/vsc-devcontainer-features/azurebicep:1": {},
 
 		// Install common utilities
-		"ghcr.io/devcontainers/features/common-utils:2.4.3": {
+		"ghcr.io/devcontainers/features/common-utils:2.5.1": {
 			"installZsh": true,
 			"installOhMyZsh": true,
 			"upgradePackages": true,
