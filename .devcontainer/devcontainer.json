@@ -28,18 +28,21 @@
 	},	
 	
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [80,443],
+	"forwardPorts": [80, 443],
 	
-	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "sed -i 's/\r$//' ./.devcontainer/post-create.sh && ./.devcontainer/post-create.sh > ~/post-create.log",
+	// Use 'postCreateCommand' to run commands after the container is created.	
+	"postCreateCommand": "chmod +x ./.devcontainer/post-create.sh && sed -i 's/\\r$//' ./.devcontainer/post-create.sh && ./.devcontainer/post-create.sh > ~/post-create.log && sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh && sudo chmod +x /usr/local/bin/oh-my-posh",
 
 	// Configure tool-specific properties.
 	"customizations": {
 		"vscode": {
 			"settings": {
-				// Uncomment if you want to use zsh as the default shell				
-				"terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font"
-				
+				 // Set the terminal font family to ensure proper character display
+				"terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font",
+				// Set the terminal font weight for bold text
+				"terminal.integrated.fontWeightBold": "bold",
+				// Set the Unicode version for the terminal
+				"terminal.integrated.unicodeVersion": "11"
 			},
 			"extensions": [
 				"GitHub.copilot",
